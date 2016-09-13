@@ -7,5 +7,10 @@ CLASSES =  {
 }
 
 def randomizer(period):
-    chosenPeriod = CLASSES[period]
-    return choice(chosenPeriod)
+    try:
+        chosenPeriod = CLASSES[period]
+        return choice(chosenPeriod)
+    except KeyError:
+        return "Period not valid"
+    except Exception:
+        return "Unknown error occured"
